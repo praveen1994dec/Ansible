@@ -1,0 +1,11 @@
+- name: Deploy Kubernetes Pods
+  hosts: localhost
+  gather_facts: no
+  tasks:
+
+    - name: Create a Kubernetes Namespace
+      kubernetes.core.k8s:
+        name: demo-namespace
+        api_version: v1
+        kind: Namespace
+        state: present
